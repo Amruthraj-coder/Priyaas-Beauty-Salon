@@ -1,0 +1,70 @@
+// src/pages/Home.scss
+.home-hero {
+  min-height: 100vh;
+  width: 100vw;
+  background: url('../assets/images/bg_1.jpg') center center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(40, 20, 20, 0.35); // Faint dark overlay for text clarity
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.logo-icon {
+  margin-bottom: 20px;
+  // Insert SVG markup or <img src="/logo.svg" />
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.credit {
+  font-size: 1.1rem;
+  opacity: 0.7;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 36px;
+  margin-top: 28px;
+  background: #fff;
+  color: #b33677;
+  border-radius: 2em;
+  font-size: 1.15rem;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+  transition: background 0.2s, color 0.2s;
+}
+.cta-btn:hover {
+  background: #b33677;
+  color: #fff;
+}
