@@ -1,0 +1,95 @@
+
+.pretty-navbar {
+  background: #ffffff3a;
+  box-shadow: 0 4px 14px rgba(214,120,208,0.09);
+  border-radius: 0 0 18px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 6px 0;
+  height: 10vh;
+  background: #ffffffe1 !important;
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 24px;
+     height: 10vh;
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 2.25rem;
+      letter-spacing: 2px;
+      color: #222;
+      text-transform: uppercase;
+      margin-right: 14px;
+      transition: color 0.2s;
+      &:hover, &:focus { color: #d678d0; }
+    }
+    .navbar-toggler {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #d678d0;
+      cursor: pointer;
+      margin-left: auto;
+      @media (max-width: 900px) {
+        display: block;
+      }
+    }
+    .navbar-links {
+      display: flex;
+      gap: 34px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        a {
+          color: #222;
+          font-size: 1.15rem;
+          font-weight: 400;
+          text-decoration: none;
+          padding: 6px 8px;
+          border-radius: 8px;
+          transition: background 0.2s, color 0.15s;
+          &:hover, &:focus {
+            background: #f3e6e9;
+            color: #d678d0;
+          }
+        }
+        &.active a {
+          color: #d678d0;
+          border-bottom: 2px solid #d678d0;
+          font-weight: bolder;
+        }
+      }
+      @media (max-width: 900px) {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        background: #fff;
+        flex-direction: column;
+        gap: 0px;
+        box-shadow: 0 4px 14px rgba(214,120,208,0.09);
+        border-radius: 0 0 18px 18px;
+        li {
+          padding: 18px 34px;
+        }
+        &.show {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+.dancing-script {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500; /* choose 400–700 */
+  font-style: normal;
+}
+

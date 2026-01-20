@@ -1,16 +1,26 @@
-// src/pages/Home.scss
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+
+}
 .home-hero {
   min-height: 100vh;
-  width: 100vw;
+  width: 98.8vw;
   background: url('../assets/images/bg_1.jpg') center center/cover no-repeat;
+  background-attachment: fixed; // Keeps the background image static
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  // No transform or filter transition on home-hero (background image remains fixed)
 }
 
 .overlay {
-  background: rgba(40, 20, 20, 0.35); // Faint dark overlay for text clarity
+  background: rgba(40, 20, 20, 0.35);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -18,6 +28,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  will-change: background;
+  transition: background 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+  // Overlay transitions smoothly to a darker shade if you update it with JS/props on scroll
 }
 
 .hero-content {
@@ -25,11 +38,12 @@
   text-align: center;
   z-index: 2;
   position: relative;
+  transition: transform 0.3s, filter 0.3s;
+  // Content (not background) animates for scale/blur/brightness effects
 }
 
 .logo-icon {
   margin-bottom: 20px;
-  // Insert SVG markup or <img src="/logo.svg" />
 }
 
 .subtitle {
@@ -41,7 +55,7 @@
 
 .title {
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 3px;
   margin-bottom: 18px;
 }
@@ -55,16 +69,19 @@
   display: inline-block;
   padding: 12px 36px;
   margin-top: 28px;
-  background: #fff;
-  color: #b33677;
+  background: #ffffff04;
+  
+  color: #ffffffa4;
+  border: 0.5px solid #ffffffa0;
   border-radius: 2em;
   font-size: 1.15rem;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 300;
   box-shadow: 0 2px 16px rgba(0,0,0,0.1);
   transition: background 0.2s, color 0.2s;
 }
+
 .cta-btn:hover {
-  background: #b33677;
-  color: #fff;
+  background: #fff;
+  color: #b33677;
 }
