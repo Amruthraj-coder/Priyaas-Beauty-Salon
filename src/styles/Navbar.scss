@@ -6,8 +6,8 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 6px 0;
-  height: 10vh;
+  padding: 8px 0;
+  height: auto;
   background: #ffffffe1 !important;
   .navbar-content {
     display: flex;
@@ -16,7 +16,10 @@
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 24px;
-     height: 10vh;
+    min-height: 64px;
+    height: auto;
+    gap: 10px;
+    position: relative;
     .navbar-brand {
       font-weight: bold;
       font-size: 2.25rem;
@@ -26,6 +29,12 @@
       margin-right: 14px;
       transition: color 0.2s;
       &:hover, &:focus { color: #d678d0; }
+
+      svg {
+        width: clamp(180px, 30vw, 280px);
+        height: auto;
+        display: block;
+      }
     }
     .navbar-toggler {
       display: none;
@@ -68,9 +77,10 @@
       @media (max-width: 900px) {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 100%;
         left: 0;
-        width: 100vw;
+        right: 0;
+        width: 100%;
         background: #fff;
         flex-direction: column;
         gap: 0px;

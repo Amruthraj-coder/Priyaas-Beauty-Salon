@@ -93,4 +93,16 @@
       height: 260px;
     }
   }
+
+  @media (max-width: 600px) {
+    padding: 1.75rem 1.1rem;
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__address {
+      font-size: 1rem;
+    }
+  }
 }

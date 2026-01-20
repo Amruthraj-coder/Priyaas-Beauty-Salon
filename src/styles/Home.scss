@@ -1,25 +1,31 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
 
 }
+.home-hero,
+.home-hero * {
+  max-width: 100%;
+}
 .home-hero {
-  min-height: 100vh;
-  width: 98.8vw;
+  min-height: 100svh;
+  width: 100%;
   background: url('../assets/images/bg_1.jpg') center center/cover no-repeat;
   background-attachment: fixed; // Keeps the background image static
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   // No transform or filter transition on home-hero (background image remains fixed)
 }
 
-.overlay {
+.home-hero .overlay {
   background: rgba(40, 20, 20, 0.35);
   width: 100%;
   height: 100%;
@@ -38,6 +44,7 @@
   text-align: center;
   z-index: 2;
   position: relative;
+  padding: 0 1.5rem;
   transition: transform 0.3s, filter 0.3s;
   // Content (not background) animates for scale/blur/brightness effects
 }
@@ -48,26 +55,26 @@
 
 .subtitle {
   letter-spacing: 2px;
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 2.8vw, 2rem);
   font-weight: 300;
   margin-bottom: 0;
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 400;
   letter-spacing: 3px;
   margin-bottom: 18px;
 }
 
 .credit {
-  font-size: 1.1rem;
+  font-size: clamp(0.85rem, 2.4vw, 1.1rem);
   opacity: 0.7;
 }
 
 .cta-btn {
   display: inline-block;
-  padding: 12px 36px;
+  padding: 12px 32px;
   margin-top: 28px;
   background: #ffffff04;
   
@@ -84,4 +91,25 @@
 .cta-btn:hover {
   background: #fff;
   color: #b33677;
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    background-attachment: scroll;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .title {
+    letter-spacing: 2px;
+  }
 }
